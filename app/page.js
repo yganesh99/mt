@@ -23,7 +23,7 @@ export default function Home() {
 					<div className='flex flex-col items-center justify-between gap-12 lg:flex-row'>
 						<div className='flex flex-col max-w-2xl space-y-6 text-center lg:text-left'>
 							<div className='inline-flex items-center px-4 py-1 space-x-2 text-sm font-medium rounded-full bg-secondary/20 text-secondary-foreground animate-fadeIn'>
-								<span>New Episode Every Monday</span>
+								<span>* New Episode Every Monday</span>
 							</div>
 							<h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-slideUp'>
 								<span className='block text-primary'>
@@ -95,7 +95,7 @@ export default function Home() {
 							description='In this episode, we explore how traditional spices have shaped cultures around the world and continue to influence modern cuisine.'
 							duration='48:32'
 							date='April 1, 2025'
-							imageUrl='/placeholder.svg?height=400&width=400'
+							imageUrl='https://images.unsplash.com/photo-1593697909683-bccb1b9e68a4?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 						/>
 					</div>
 				</div>
@@ -122,7 +122,7 @@ export default function Home() {
 									description='Exploring how technology is revolutionizing the way we produce, distribute, and consume food.'
 									duration='42:18'
 									date={`March ${25 - i}, 2025`}
-									imageUrl='/placeholder.svg?height=300&width=300'
+									imageUrl='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 								/>
 							</div>
 						))}
@@ -173,7 +173,7 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div className='relative h-80 lg:h-auto animate-slideUp animation-delay-200'>
+						<div className='relative h-auto animate-slideUp animation-delay-200'>
 							<div className='absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-secondary opacity-20'></div>
 							<div className='absolute inset-0 flex items-center justify-center'>
 								<div className='relative flex items-center justify-center w-20 h-20 rounded-full bg-background/80 backdrop-blur-sm cursor-pointer group'>
@@ -182,7 +182,7 @@ export default function Home() {
 								</div>
 							</div>
 							<Image
-								src='/placeholder.svg?height=400&width=600'
+								src='https://cdn6.f-cdn.com/contestentries/2330448/58447787/654146d228019_thumb900.jpg'
 								alt='Podcast Studio'
 								width={600}
 								height={400}
