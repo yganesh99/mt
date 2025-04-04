@@ -1,13 +1,40 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Headphones, Play, Mic, ChevronRight, Rss } from 'lucide-react';
-import PodcastPlayer from '../app/_components/podcast-player';
-import EpisodeCard from '../app/_components/episode-card';
-import Newsletter from '../app/_components/newsletter';
-import AnimatedWaveform from '../app/_components/animated-waveform';
+import PodcastPlayer from './_components/podcast-player';
+import EpisodeCard from './_components/episode-card';
+import Newsletter from './_components/newsletter';
+import AnimatedWaveform from './_components/animated-waveform';
 import Logo from '../public/Logo.png';
 
 export default function Home() {
+	const episodes = [
+		{
+			title: `Women in Tamil Cinema: Representation & Realities - Episode 3`,
+			description: `Welcome to an insightful Tamil podcast episode where we dive deep into the journey of women in the Tamil film industry. This episode explores the roles and representations of female characters, the challenges women face on and off-screen, and the industry's evolving portrayal of women.`,
+			duration: '01:29:31',
+			date: `November 11, 2024`,
+			imageUrl:
+				'https://i.ytimg.com/vi/6Al-LtvdyDY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAzyvUth8AlaFXAuy_EkFgNeIDklQ',
+		},
+		{
+			title: `One Last Time, Vj Anna! - Episode 2`,
+			description: `With Vijay na saying goodbye to Kollywood, we speculate what Tamil cinema will be like without the THALAPATHY.`,
+			duration: '01:17:36',
+			date: `September 30, 2024`,
+			imageUrl:
+				'https://i.ytimg.com/vi/9qpmN4Xf6Zg/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBvbGKdW4lwKDyK0jc1e_AxsKbwPA',
+		},
+		{
+			title: `Greatest of all time? - Episode 1`,
+			description: `GOATest friends expressing their unorganized thoughts on the latest Vijay movie called GOAT, amidst Manimegalai, Priyanka CWC chaos.`,
+			duration: '50:57',
+			date: `September 16, 2024`,
+			imageUrl:
+				'https://i.ytimg.com/vi/fq5L-Lh4gOk/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC0BHRIobpZJfZ50tG13YONBa4bWg',
+		},
+	];
+
 	return (
 		<div className='min-h-screen bg-background'>
 			{/* Hero Section */}
@@ -47,7 +74,8 @@ export default function Home() {
 									Listen Now
 								</Link>
 								<Link
-									href='#subscribe'
+									href='https://www.youtube.com/@MasalaThoughts'
+									target='_blank'
 									className='inline-flex items-center px-6 py-3 font-medium border rounded-full text-primary border-primary hover:bg-primary/10 transition-all'
 								>
 									<Rss className='w-5 h-5 mr-2' />
@@ -91,11 +119,11 @@ export default function Home() {
 
 					<div className='animate-fadeIn animation-delay-200'>
 						<PodcastPlayer
-							title='The Cultural Impact of Traditional Spices'
-							description='In this episode, we explore how traditional spices have shaped cultures around the world and continue to influence modern cuisine.'
-							duration='48:32'
-							date='April 1, 2025'
-							imageUrl='https://images.unsplash.com/photo-1593697909683-bccb1b9e68a4?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+							title='The Tweet Talk: Reacting to the Most Random Tweets! - Episode 4'
+							description='Brace yourself as a group of friends yap about the most randomest tweet, an absolute Twitter chaos as we dive into the wildest, weirdest, and most random tweets we found! From introducing sexuality to kids (who knew this would be a debate?), to the pros & cons of movie reviews (especially in Kollywood—because opinions are never mild), and the rollercoaster of arranged marriages with the hope of falling in love (bold strategy, let’s see if it works).'
+							duration='01:03:30'
+							date='April 2, 2025'
+							imageUrl='https://i.ytimg.com/vi_webp/TwKlPTUTGO0/sddefault.webp'
 						/>
 					</div>
 				</div>
@@ -109,20 +137,18 @@ export default function Home() {
 					</h2>
 
 					<div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-						{[1, 2, 3].map((i) => (
+						{episodes.map((episode, index) => (
 							<div
-								key={i}
+								key={index}
 								className='animate-slideUp'
-								style={{ animationDelay: `${i * 100}ms` }}
+								style={{ animationDelay: `${index * 100}ms` }}
 							>
 								<EpisodeCard
-									title={`Episode ${
-										30 - i
-									}: Tech Innovations in Food Industry`}
-									description='Exploring how technology is revolutionizing the way we produce, distribute, and consume food.'
-									duration='42:18'
-									date={`March ${25 - i}, 2025`}
-									imageUrl='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+									title={episode.title}
+									description={episode.description}
+									duration={episode.duration}
+									date={episode.data}
+									imageUrl={episode.imageUrl}
 								/>
 							</div>
 						))}
@@ -142,7 +168,8 @@ export default function Home() {
 			{/* About Section */}
 			<section className='py-16 bg-background'>
 				<div className='container px-4 mx-auto sm:px-6 lg:px-8'>
-					<div className='grid gap-12 lg:grid-cols-2'>
+					{/* <div className='grid gap-12 lg:grid-cols-2'> */}
+					<div className='grid'>
 						<div className='flex flex-col justify-center space-y-6 animate-slideUp'>
 							<h2 className='text-3xl font-bold tracking-tight'>
 								About The Podcast
@@ -173,7 +200,7 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div className='relative h-auto animate-slideUp animation-delay-200'>
+						{/* <div className='relative h-auto animate-slideUp animation-delay-200'>
 							<div className='absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-secondary opacity-20'></div>
 							<div className='absolute inset-0 flex items-center justify-center'>
 								<div className='relative flex items-center justify-center w-20 h-20 rounded-full bg-background/80 backdrop-blur-sm cursor-pointer group'>
@@ -188,7 +215,7 @@ export default function Home() {
 								height={400}
 								className='object-cover w-full h-full rounded-2xl'
 							/>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>
@@ -204,17 +231,20 @@ export default function Home() {
 							Never Miss An Episode
 						</h2>
 						<p className='mb-8 text-lg text-muted-foreground'>
-							Subscribe to our newsletter and get notified when
-							new episodes are released.
+							Subscribe to our newsletter to receive updates on
+							new episode releases and announcements about
+							upcoming events.
 						</p>
 						<Newsletter />
 
-						<div className='grid grid-cols-2 gap-4 mt-12 sm:grid-cols-4'>
+						<div className='grid grid-cols-2 gap-4 mt-12 sm:grid-cols-2'>
+							{/* <div className='grid grid-cols-2 gap-4 mt-12 sm:grid-cols-4'> */}
 							{[
 								'Spotify',
-								'Apple Podcasts',
-								'Google Podcasts',
-								'RSS',
+								// 'Apple Podcasts',
+								// 'Google Podcasts',
+								// 'RSS',
+								'Youtube',
 							].map((platform, i) => (
 								<Link
 									key={platform}

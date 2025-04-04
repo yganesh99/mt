@@ -26,9 +26,9 @@ export default function Header() {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
-	const toggleTheme = () => {
-		setTheme(theme === 'dark' ? 'light' : 'dark');
-	};
+	// const toggleTheme = () => {
+	// 	setTheme(theme === 'dark' ? 'light' : 'dark');
+	// };
 
 	const navLinks = [
 		{ name: 'Home', href: '/' },
@@ -77,13 +77,14 @@ export default function Header() {
 						</Link>
 					))}
 					<Link
-						href='#subscribe'
+						href='https://www.youtube.com/@MasalaThoughts'
 						className='inline-flex items-center px-4 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
+						target='_blank'
 					>
 						<Headphones className='w-4 h-4 mr-2' />
 						Subscribe
 					</Link>
-					<button
+					{/* <button
 						onClick={toggleTheme}
 						className='p-2 rounded-full hover:bg-muted'
 						aria-label='Toggle theme'
@@ -93,12 +94,12 @@ export default function Header() {
 						) : (
 							<Moon className='w-5 h-5' />
 						)}
-					</button>
+					</button> */}
 				</nav>
 
 				{/* Mobile Menu Button */}
 				<div className='flex items-center space-x-4 md:hidden'>
-					<button
+					{/* <button
 						onClick={toggleTheme}
 						className='p-2 rounded-full hover:bg-muted'
 						aria-label='Toggle theme'
@@ -108,7 +109,7 @@ export default function Header() {
 						) : (
 							<Moon className='w-5 h-5' />
 						)}
-					</button>
+					</button> */}
 					<button
 						onClick={toggleMenu}
 						className='p-2 rounded-full hover:bg-muted'
@@ -142,9 +143,10 @@ export default function Header() {
 						</Link>
 					))}
 					<Link
-						href='#subscribe'
+						href='https://www.youtube.com/@MasalaThoughts'
 						className='inline-flex items-center px-6 py-3 text-base font-medium rounded-full bg-primary text-primary-foreground'
 						onClick={() => setIsMenuOpen(false)}
+						target='_blank'
 					>
 						<Headphones className='w-5 h-5 mr-2' />
 						Subscribe

@@ -80,11 +80,13 @@ export default function PodcastPlayer({
 						alt={title}
 						width={400}
 						height={400}
-						className='object-cover w-full h-full rounded-lg'
+						className='object-contain w-full h-full rounded-lg'
+						// className='object-cover w-full h-full rounded-lg'
 					/>
 				</div>
 
-				<div className='flex flex-col justify-between md:col-span-2'>
+				<div className='flex flex-col justify-center md:col-span-2'>
+					{/* <div className='flex flex-col justify-between md:col-span-2'> */}
 					<div className='space-y-4'>
 						<div className='flex items-center space-x-2 text-sm text-muted-foreground'>
 							<Calendar className='w-4 h-4' />
@@ -97,7 +99,7 @@ export default function PodcastPlayer({
 						<p className='text-muted-foreground'>{description}</p>
 					</div>
 
-					<div className='mt-6 space-y-4'>
+					{/* <div className='mt-6 space-y-4'>
 						<div className='relative w-full h-2 overflow-hidden bg-muted rounded-full'>
 							<div
 								className='absolute top-0 left-0 h-full bg-primary'
@@ -141,7 +143,7 @@ export default function PodcastPlayer({
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

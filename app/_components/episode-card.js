@@ -17,7 +17,7 @@ export default function EpisodeCard({
 					alt={title}
 					width={300}
 					height={300}
-					className='object-cover w-full aspect-square'
+					className='object-contain w-full aspect-square'
 				/>
 				<div className='absolute inset-0 transition-opacity bg-black/30 opacity-0 hover:opacity-100'>
 					<div className='flex items-center justify-center w-full h-full'>
