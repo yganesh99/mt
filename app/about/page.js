@@ -1,4 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
+
 import Yogi from '../../public/yogi.png';
 import Mika from '../../public/mika.png';
 import Shevs from '../../public/shevs.png';
@@ -74,41 +78,53 @@ export default function AboutPage() {
 			{/* Team Members Section */}
 			<section className='container mx-auto py-12 px-4'>
 				<div className='space-y-24 md:space-y-32'>
-					{teamMembers.map((member, index) => (
-						<div
-							key={member.name}
-							className={`flex flex-col ${
-								index % 2 === 0
-									? 'md:flex-row'
-									: 'md:flex-row-reverse'
-							} items-center gap-8 md:gap-16`}
-						>
+					{teamMembers.map((member, index) => {
+						const { ref, inView } = useInView({
+							triggerOnce: true, // animate only once
+							threshold: 0.65, // start when 65% of the image is visible
+						});
+
+						return (
 							<div
-								className={`w-full md:w-1/2 flex justify-center animate-float`}
+								key={member.name}
+								className={`flex flex-col ${
+									index % 2 === 0
+										? 'md:flex-row'
+										: 'md:flex-row-reverse'
+								} items-center gap-8 md:gap-16`}
 							>
-								<div className='w-64 h-80 rounded-lg overflow-hidden flex items-center justify-center'>
-									<Image
-										src={member.silhouette}
-										alt={`Silhouette of ${member.name}`}
-										width={256}
-										height={320}
-										className='object-cover w-full h-full'
-									/>
+								<div
+									ref={ref}
+									className={`w-full md:w-1/2 flex justify-center transition-all duration-700 ${
+										inView
+											? 'animate-slideUp'
+											: 'opacity-0 translate-y-10'
+									}`}
+								>
+									<div className='w-64 h-80 rounded-lg overflow-hidden flex items-center justify-center'>
+										<Image
+											src={member.silhouette}
+											alt={`Silhouette of ${member.name}`}
+											width={256}
+											height={320}
+											className='object-cover w-full h-full'
+										/>
+									</div>
+								</div>
+								<div className='w-full md:w-1/2 text-center md:text-left'>
+									<h2 className='text-2xl md:text-3xl font-bold text-[#e05f35] mb-2'>
+										{member.name}
+									</h2>
+									<p className='text-yellow-300 mb-4'>
+										{member.role}
+									</p>
+									<p className='text-gray-300'>
+										{member.description}
+									</p>
 								</div>
 							</div>
-							<div className='w-full md:w-1/2 text-center md:text-left'>
-								<h2 className='text-2xl md:text-3xl font-bold text-[#e05f35] mb-2'>
-									{member.name}
-								</h2>
-								<p className='text-yellow-300 mb-4'>
-									{member.role}
-								</p>
-								<p className='text-gray-300'>
-									{member.description}
-								</p>
-							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			</section>
 		</div>
