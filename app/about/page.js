@@ -71,7 +71,7 @@ export default function AboutPage() {
 				</p>
 			</section>
 
-			{/* Team Members */}
+			{/* Team Members Section */}
 			<section className='container mx-auto py-12 px-4'>
 				<div className='space-y-24 md:space-y-32'>
 					{teamMembers.map((member, index) => (
