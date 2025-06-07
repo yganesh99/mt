@@ -34,7 +34,7 @@ export default function Header() {
 		{ name: 'Home', href: '/' },
 		{ name: 'Episodes', href: '/episodes' },
 		{ name: 'About', href: '/about' },
-		{ name: 'Contact', href: '/contact' },
+		// { name: 'Contact', href: '/contact' },
 	];
 
 	return (
