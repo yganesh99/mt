@@ -14,5 +14,12 @@ export default function Providers({ children }) {
 		return <>{children}</>; // Render children without ThemeProvider during SSR
 	}
 
-	return <ThemeProvider attribute='class'>{children}</ThemeProvider>; // Wrap children with ThemeProvider after mount
+	return (
+		<ThemeProvider
+			attribute='class'
+			forcedTheme='dark'
+		>
+			{children}
+		</ThemeProvider>
+	); // Wrap children with ThemeProvider after mount
 }

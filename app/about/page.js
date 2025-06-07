@@ -1,5 +1,11 @@
 import Image from 'next/image';
 import Yogi from '../../public/yogi.png';
+import Mika from '../../public/mika.png';
+import Shevs from '../../public/shevs.png';
+import Saiju from '../../public/saiju.png';
+import Swathi from '../../public/swathi.png';
+import Sanjay from '../../public/sanjay2.png';
+import Raj from '../../public/raj.png';
 
 export default function AboutPage() {
 	const teamMembers = [
@@ -8,47 +14,47 @@ export default function AboutPage() {
 			role: 'Certified Thavalai',
 			description:
 				'GVM heroine that can turn into Vetrimaran heroine anytime.',
-			silhouette: '/team/silhouette-1.png',
+			silhouette: Mika,
 		},
 		{
 			name: 'Shevs',
 			role: 'Certified Anil & Intense CSK Fan',
 			description:
 				'Has hosted Super Singer(from Ali Express). Busy getting her voting rights in TN for TVK 2026.',
-			silhouette: '/team/silhouette-2.png',
+			silhouette: Shevs,
 		},
 		{
 			name: 'Saiju',
 			role: 'Certified Aamai & Depressed Arsenal Fan & Yapper Machine',
 			description: 'Stand up comedian in denial.',
-			silhouette: '/team/silhouette-3.png',
+			silhouette: Saiju,
 		},
 		{
 			name: 'Yogi',
 			role: 'Dormant Aamai & Robotic Software Engineer',
 			description:
 				'Shows up to the podcast only when a JIRA ticket is assigned.',
-			silhouette: '/team/silhouette-4.png',
+			silhouette: Yogi,
 		},
 		{
 			name: 'Swathi',
 			role: 'Closeted Anil',
 			description:
 				'Her unfiltered mouth could start a civil war, so we keep her appearances rare for public safety.',
-			silhouette: '/team/silhouette-5.png',
+			silhouette: Swathi,
 		},
 		{
 			name: 'Sanjay',
 			role: 'Thideer Anil Since Leo',
 			description:
 				'Blessed with an Arjun Das voice. Often mistaken for Varman from Jailer. Manasalayoo??.',
-			silhouette: '/team/silhouette-6.png',
+			silhouette: Sanjay,
 		},
 		{
 			name: 'Niddy',
 			role: 'UUUHHMM...MMMM...YYE.',
 			description: 'The Ilayamaan & 144p version of Suriya & AK Racing.',
-			silhouette: '/team/silhouette-7.png',
+			silhouette: Raj,
 		},
 	];
 
@@ -77,19 +83,21 @@ export default function AboutPage() {
 									: 'md:flex-row-reverse'
 							} items-center gap-8 md:gap-16`}
 						>
-							<div className='w-full md:w-1/2 flex justify-center'>
+							<div
+								className={`w-full md:w-1/2 flex justify-center ${
+									index % 2 === 0
+										? 'animate-bounce'
+										: 'animate-bounce'
+								}`}
+							>
 								<div className='relative w-64 h-80 rounded-lg overflow-hidden'>
 									<div className='absolute inset-0 flex items-end justify-center'>
 										<Image
-											src={Yogi}
+											src={member.silhouette}
 											alt={`Silhouette of ${member.name}`}
 											width={256}
 											height={320}
-											className={`object-contain ${
-												index % 2 === 0
-													? 'animate-bounce'
-													: 'animate-bounce'
-											}`}
+											className={`object-cover`}
 										/>
 									</div>
 								</div>
