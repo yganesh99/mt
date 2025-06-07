@@ -84,11 +84,7 @@ export default function AboutPage() {
 							} items-center gap-8 md:gap-16`}
 						>
 							<div
-								className={`w-full md:w-1/2 flex justify-center ${
-									index % 2 === 0
-										? 'animate-bounce'
-										: 'animate-bounce'
-								}`}
+								className={`w-full md:w-1/2 flex justify-center animate-float`}
 							>
 								<div className='w-64 h-80 rounded-lg overflow-hidden flex items-center justify-center'>
 									<Image
