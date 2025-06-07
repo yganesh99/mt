@@ -90,16 +90,14 @@ export default function AboutPage() {
 										: 'animate-bounce'
 								}`}
 							>
-								<div className='relative w-64 h-80 rounded-lg overflow-hidden'>
-									<div className='absolute inset-0 flex items-end justify-center'>
-										<Image
-											src={member.silhouette}
-											alt={`Silhouette of ${member.name}`}
-											width={256}
-											height={320}
-											className={`object-cover`}
-										/>
-									</div>
+								<div className='w-64 h-80 rounded-lg overflow-hidden flex items-center justify-center'>
+									<Image
+										src={member.silhouette}
+										alt={`Silhouette of ${member.name}`}
+										width={256}
+										height={320}
+										className='object-cover w-full h-full'
+									/>
 								</div>
 							</div>
 							<div className='w-full md:w-1/2 text-center md:text-left'>
