@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Menu, X, Headphones, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '../lib/utils';
-import Logo from '../../public/Logo.png';
+import Logo from '../../public/Logo1.png';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +43,7 @@ export default function Header() {
 				'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
 				isScrolled
 					? 'bg-background/80 backdrop-blur-md shadow-sm'
-					: 'bg-transparent'
+					: 'bg-transparent',
 			)}
 		>
 			<div className='container flex items-center justify-between px-4 py-4 mx-auto sm:px-6 lg:px-8'>
@@ -128,7 +128,7 @@ export default function Header() {
 			<div
 				className={cn(
 					'fixed inset-0 z-40 flex flex-col pt-24 pb-6 bg-background md:hidden transition-transform duration-300 ease-in-out',
-					isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+					isMenuOpen ? 'translate-x-0' : 'translate-x-full',
 				)}
 			>
 				<nav className='flex flex-col items-center space-y-6'>

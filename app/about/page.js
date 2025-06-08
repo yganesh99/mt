@@ -10,7 +10,7 @@ import Saiju from '../../public/saiju.png';
 import Swathi from '../../public/swathi.png';
 import Sanjay from '../../public/sanjay2.png';
 import Raj from '../../public/raj.png';
-import Logo from '../../public/Logo.png';
+import Logo from '../../public/Logo1.png';
 
 export default function AboutPage() {
 	const teamMembers = [
@@ -97,7 +97,7 @@ export default function AboutPage() {
 						alt='Masala Thoughts Podcast Logo'
 						width={320}
 						height={320}
-						className='relative z-10 object-contain w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80'
+						className='relative z-10 object-contain w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 animate-float'
 						priority
 					/>
 				</div>

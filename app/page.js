@@ -5,7 +5,7 @@ import PodcastPlayer from './_components/podcast-player';
 import EpisodeCard from './_components/episode-card';
 import Newsletter from './_components/newsletter';
 import AnimatedWaveform from './_components/animated-waveform';
-import Logo from '../public/Logo.png';
+import Logo from '../public/Logo1.png';
 
 export default function Home() {
 	const episodes = [
