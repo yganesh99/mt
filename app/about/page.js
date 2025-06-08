@@ -66,7 +66,7 @@ export default function AboutPage() {
 	];
 
 	return (
-		<div className='min-h-screen pt-24 pb-16  bg-gradient-to-b from-primary/50 to-background'>
+		<div className='min-h-screen pt-24 pb-16 bg-gradient-to-b from-primary/50 to-background'>
 			{/* Hero Section */}
 			<div className='flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 py-8 md:py-12 lg:py-16 px-4 md:px-6 lg:px-8'>
 				<div className='flex-1 text-center lg:text-left'>

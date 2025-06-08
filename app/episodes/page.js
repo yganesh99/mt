@@ -57,13 +57,13 @@ const episodes = [
 
 export default function EpisodesPage() {
 	return (
-		<div className='min-h-screen pt-24 pb-16 bg-background'>
+		<div className='min-h-screen pt-24 pb-16 bg-gradient-to-b from-primary/50 to-background'>
 			<div className='container px-4 mx-auto sm:px-6 lg:px-8'>
 				<div className='max-w-2xl mx-auto mb-12 text-center'>
-					<h1 className='mb-4 text-4xl font-bold tracking-tight sm:text-5xl text-primary animate-fadeIn'>
+					<h1 className='mb-4 text-4xl font-bold tracking-tight sm:text-5xl text-white animate-fadeIn'>
 						All Episodes
 					</h1>
-					<p className='text-lg text-muted-foreground animate-fadeIn animation-delay-100'>
+					<p className='text-lg text-gray-300 animate-fadeIn animation-delay-100'>
 						Browse our complete collection of thought-provoking
 						conversations that spice up your intellectual journey.
 					</p>

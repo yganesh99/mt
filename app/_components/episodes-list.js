@@ -15,13 +15,13 @@ export function EpisodesList({ episodes }) {
 	const startIndex = (currentPage - 1) * episodesPerPage;
 	const currentEpisodes = episodes.slice(
 		startIndex,
-		startIndex + episodesPerPage
+		startIndex + episodesPerPage,
 	);
 
 	return (
 		<div className='space-y-8 animate-fadeIn animation-delay-300'>
 			<div className='flex items-center justify-between'>
-				<div className='text-sm text-muted-foreground'>
+				<div className='text-sm text-gray-300'>
 					Showing {startIndex + 1}-
 					{Math.min(startIndex + episodesPerPage, episodes.length)} of{' '}
 					{episodes.length} episodes
@@ -212,7 +212,7 @@ export function EpisodesList({ episodes }) {
 						size='icon'
 						onClick={() =>
 							setCurrentPage((prev) =>
-								Math.min(prev + 1, totalPages)
+								Math.min(prev + 1, totalPages),
 							)
 						}
 						disabled={currentPage === totalPages}

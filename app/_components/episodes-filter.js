@@ -48,7 +48,7 @@ export function EpisodesFilter() {
 		<div className='mb-8 space-y-4 animate-fadeIn animation-delay-200'>
 			<div className='flex flex-col gap-4 sm:flex-row'>
 				<div className='relative flex-1'>
-					<Search className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
+					<Search className='absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white' />
 					<Input
 						placeholder='Search episodes...'
 						value={searchQuery}
@@ -58,7 +58,7 @@ export function EpisodesFilter() {
 					{searchQuery && (
 						<button
 							onClick={() => setSearchQuery('')}
-							className='absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground'
+							className='absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-foreground'
 						>
 							<X className='h-4 w-4' />
 						</button>
@@ -101,7 +101,7 @@ export function EpisodesFilter() {
 								<DropdownMenuCheckboxItem
 									key={category}
 									checked={selectedCategories.includes(
-										category
+										category,
 									)}
 									onCheckedChange={() =>
 										handleCategoryToggle(category)
